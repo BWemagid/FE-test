@@ -1,0 +1,111 @@
+.transactions {
+    width: 100%;
+    background: white;
+    .heading {
+        background: #0c8397;
+        color: white;
+        font-weight: 300;
+        padding: 9px 0px;
+        display: grid;
+        justify-items: center;
+        grid-template-columns: 10% 90%;
+        align-items: center;
+        font-size: 19px;
+    }
+    .trans-log{
+        padding: 10px 15px;
+        table {
+            width: 100%;
+            th{
+                font-weight: 400;
+                border: 1px solid #999;
+                padding: 7px 5px;
+                color: #272727;
+                text-transform: uppercase;
+            }
+            .sort {
+                margin: 10px 0 40px 0;
+                display: grid;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                justify-content: center;
+                .search_box {
+                    margin-bottom: 15px;
+                }
+                .item-sort{
+                    display: block;
+                    span{
+                        line-height: 34px;
+                        padding-right: 17px;
+                        font-weight: bold;
+                        font-size: 15px;
+                    }
+                }
+            }
+            .logs{
+                display: grid;
+                justify-content: space-between;
+                grid-template-columns: 30px 35px 48% 17%;
+                border: 1px solid #999;
+                border-top: none;
+                color: #272727;
+                padding: 5px 10px;
+                .date {
+                    line-height: 52px;
+                    color: #999;
+                    font-weight: 300;
+                }
+                .transaction-type{
+                    font-size: 15px;
+                    font-weight: 300;
+                }
+                .amount{
+                    line-height: 52px;
+                    font-weight: 600;
+                }
+                img{
+                    max-width: 35px;       
+                    margin-top: 8px;
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 930px){
+    .transactions {
+        max-width: 100%;
+        margin-left: 26px;
+        .trans-log {
+            table{
+                th{
+                    padding: 7px 11px;
+                    max-height: 22px;
+                }
+                .sort{
+                    justify-content: space-between;
+                    grid-template-columns: 40% 90%;
+                    .search_box {
+                        margin-bottom: initial;
+                    }
+                    .item-sort{
+                        display: inline-flex;
+                        max-width: 457px;
+                        justify-content: flex-end;
+                    }
+                }
+                .logs{
+                    grid-template-columns: 85px 35px 48% 13%;
+                    .amount{
+                        padding-right: 10px;
+                    }
+                    .date{
+                        padding-left: 28px;
+                    }
+                }
+            }
+        }
+    }
+
+}

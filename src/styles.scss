@@ -1,0 +1,27 @@
+@import 'reset';
+
+
+:root {
+    --desktop-width: 1024px;
+    --main-color: #ec6f30;
+    --font-color: #999;
+    --font: 'Kanit', sans-serif;
+}
+
+body,html {
+    font-family: var(--font);
+    color: var(--font-color);
+    margin: 0;
+  }
+html, body { height: 100%; }
+
+
+.mat-body, .mat-body-1, .mat-typography{
+  font: initial;
+  font-family: var(--font);
+}
+
+.bold-black{
+  font-weight: bold;
+  color: #000;
+}

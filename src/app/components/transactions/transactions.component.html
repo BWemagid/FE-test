@@ -1,0 +1,29 @@
+<section class="transactions">
+  <div class="heading"><span class="material-icons">business_center</span> <span>Recent Transactions</span></div>
+  <div class="trans-log">
+      <table matSort (matSortChange)="sortData($event)">
+        <tr class="headers sort">
+          <mat-form-field class="example-form-field">
+            <input [(ngModel)]="searchText" matInput placeholder="Search By Typing" autocomplete="off">
+            <button mat-button mat-icon-button matSuffix (click)="clearSearchField()" *ngIf="searchText">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+          <div class="item-sort">
+            <span class="bold-black">Sort By</span>
+            <th mat-sort-header="date">date</th>
+            <th mat-sort-header="name">Beneficiary</th>
+            <th mat-sort-header="amount">Amount</th>
+          </div>
+        </tr>
+        <ng-container *ngFor="let transactions of transactions | appFilter: searchText">
+          <tr class="logs" [ngStyle]="{'border-left': '9px solid' + transactions.categoryCode}">
+            <td class="date">{{transactions.dates.valueDate | date: 'MMM. dd'}}</td>
+            <td><img src="{{transactions.image}}" title="merchant image"></td>
+            <td>{{transactions.merchant.name}} <br /> <span class="transaction-type">{{transactions.transaction.type}}</span></td>
+            <td class="amount">{{transactions.transaction.amountCurrency.amount}}</td>
+          </tr>
+        </ng-container>
+      </table>
+  </div>
+</section>

@@ -1,0 +1,47 @@
+
+header{
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 2px solid var(--main-color);
+    .logo{
+        width: 100%;
+    }
+}
+
+main{
+    background: url(/assets/background.jpg) no-repeat;
+    background-size: cover;
+    padding: 0 30px;
+    
+    section{
+        max-width: var(--desktop-width);
+        margin: 0 auto;
+        padding: 50px 0;
+    }
+}
+
+@media only screen and (min-width: 930px){
+    header{
+        div{
+            max-width: var(--desktop-width);
+            margin: 0 auto;
+        }
+        .logo{
+            width: 100%;
+            max-width: 448px;
+        }
+    }
+    main{
+        background: url(/assets/background.jpg) no-repeat;
+        background-size: cover;
+        padding: initial;
+        min-height: 100vh;
+        section{
+            display:flex;
+            flex-wrap: wrap;
+            >:nth-child(2) {
+                flex: 1 0 auto;
+              }
+        }
+    }
+}

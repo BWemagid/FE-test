@@ -1,0 +1,31 @@
+<section class="transfer">
+    <div class="heading"><span class="material-icons">wifi_protected_setup</span> <span>Make A Transfer</span></div>
+    <div>
+        <form [formGroup]="transferForm" class="transferform">
+            <div class="items">
+                <label class="bold-black">From Account</label>
+                <mat-form-field class="example-full-width">
+                    <mat-label>{{accountinfo?.checkings?.name}} ${{accountinfo?.checkings?.amount}}</mat-label>
+                    <input type="text" readonly matInput placeholder="">
+                  </mat-form-field>
+            </div>
+            <div class="items">
+                <label class="bold-black">To Account</label>
+                <mat-form-field class="example-full-width">
+                    <mat-label>{{accountinfo?.savings?.name}}</mat-label>
+                    <input type="text" readonly matInput placeholder="">
+                  </mat-form-field>
+            </div>
+            <div class="items">
+                <label class="bold-black">Amount</label>
+                <mat-form-field class="example-full-width">
+                    <input type="number" formControlName="amount" required matInput placeholder="$0.00">
+                  </mat-form-field>
+                <div *ngIf="submitted && f.amount.errors" class="invalid-feedback">
+                    Please Enter an Amount
+                </div>
+            </div>
+            <button class="transfer-btn" mat-button  (click)="openDialog()">Submit</button>
+        </form>
+    </div>
+</section>

@@ -1,0 +1,58 @@
+.transfer {
+    width: 100%;
+    margin-bottom: 50px;
+    background: white;
+    .example-full-width {
+        width: 100%;
+    }
+    .heading {
+        background: #0c8397;
+        color: white;
+        font-weight: 300;
+        padding: 9px 0px;
+        display: grid;
+        justify-items: center;
+        grid-template-columns: 34px 200px;
+        align-items: center;
+        font-size: 19px;
+    }
+    .transferform {
+        padding: 10px 20px;
+        label{
+            display: block;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .items {
+            margin: 10px 0;
+            input{
+                width: 100%;
+            }
+        }
+        .transfer-btn {
+            display: block;
+            margin: 35px auto 0 30%;
+            padding: 10px 50px;
+            background: var(--main-color);
+            color: white;
+            font-family: var(--font);
+            text-transform: uppercase;
+            border: none;
+            border-radius: 5px;
+        }
+    }
+}
+
+.invalid-feedback {
+    color: 1px solid red;
+    font-family: var(--font);
+    font-size: 10px;
+}
+
+
+
+@media only screen and (min-width: 930px){
+    .transfer {
+        max-width: 235px;
+    }
+}
